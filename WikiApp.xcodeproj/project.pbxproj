@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		804518A12880F43A009D2410 /* WikiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804518A02880F43A009D2410 /* WikiAppApp.swift */; };
-		804518A32880F43A009D2410 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804518A22880F43A009D2410 /* ContentView.swift */; };
+		804518A32880F43A009D2410 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804518A22880F43A009D2410 /* HomeView.swift */; };
 		804518A52880F43C009D2410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804518A42880F43C009D2410 /* Assets.xcassets */; };
 		804518A82880F43C009D2410 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804518A72880F43C009D2410 /* Preview Assets.xcassets */; };
 		804518B22880F43C009D2410 /* WikiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804518B12880F43C009D2410 /* WikiAppTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		8045189D2880F43A009D2410 /* WikiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		804518A02880F43A009D2410 /* WikiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAppApp.swift; sourceTree = "<group>"; };
-		804518A22880F43A009D2410 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		804518A22880F43A009D2410 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		804518A42880F43C009D2410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		804518A72880F43C009D2410 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		804518AD2880F43C009D2410 /* WikiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,8 +94,8 @@
 		8045189F2880F43A009D2410 /* WikiApp */ = {
 			isa = PBXGroup;
 			children = (
+				804518CC2880F840009D2410 /* Views */,
 				804518A02880F43A009D2410 /* WikiAppApp.swift */,
-				804518A22880F43A009D2410 /* ContentView.swift */,
 				804518A42880F43C009D2410 /* Assets.xcassets */,
 				804518A62880F43C009D2410 /* Preview Content */,
 			);
@@ -125,6 +125,14 @@
 				804518BD2880F43C009D2410 /* WikiAppUITestsLaunchTests.swift */,
 			);
 			path = WikiAppUITests;
+			sourceTree = "<group>";
+		};
+		804518CC2880F840009D2410 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				804518A22880F43A009D2410 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				804518A32880F43A009D2410 /* ContentView.swift in Sources */,
+				804518A32880F43A009D2410 /* HomeView.swift in Sources */,
 				804518A12880F43A009D2410 /* WikiAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
