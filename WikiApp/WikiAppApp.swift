@@ -11,6 +11,11 @@ import SwiftUI
 struct WikiAppApp: App {
     @State private var isLoaded = false
     
+    init() {
+        URLCache.shared.memoryCapacity = 10_000_000
+        URLCache.shared.diskCapacity = 1_000_000_000
+    }
+    
     var body: some Scene {
         WindowGroup {
             ZStack {
