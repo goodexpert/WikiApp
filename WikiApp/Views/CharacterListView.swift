@@ -74,9 +74,6 @@ fileprivate struct CardView: View {
                         case .success(let image):
                             image.resizable()
                                 .scaledToFit()
-                                .onAppear {
-                                    print(image)
-                                }
                         case .empty:
                             ProgressView()
                         case .failure(_):
