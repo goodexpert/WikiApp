@@ -12,7 +12,9 @@ import RickMortySwiftApi
 struct LocationListView: View {
     @EnvironmentObject var viewModel: MainViewModel
     
+    @State private var isLinkActive: Bool = false
     @State private var isRefreshing = false
+    @State private var selecteId: Int = -1
     @State private var subscriptions = Set<AnyCancellable>()
     
     var body: some View {
@@ -31,14 +33,26 @@ struct LocationListView: View {
                 ForEach(viewModel.locations) { location in
                     CardView(location: location)
                         .padding([.leading, .trailing], Constants.margin)
+                        .onTapGesture {
+                            selecteId = location.id
+                            isLinkActive = true
+                        }
                 }
             }
         }
+        .background(navigationLink())
         .onAppear {
             if viewModel.locations.count == 0 {
                 viewModel.syncLocation()
             }
         }
+    }
+    
+    private func navigationLink() -> some View {
+        NavigationLink(destination: LocationDetailsView(locationId: selecteId), isActive: $isLinkActive) {
+            EmptyView()
+        }
+        .hidden()
     }
     
     private struct Constants {

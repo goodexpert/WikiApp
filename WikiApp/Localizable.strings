@@ -7,7 +7,17 @@
 */
 "appName" = "Ricky & Morty Wiki";
 "character" = "Character";
+"characters" = "Characters";
 "episode" = "Episode";
+"episodes" = "Episodes";
 "location" = "Location";
+"labelAirDate" = "Air Date : %@";
 "labelDimension" = "Dimension : %@";
+"labelEpisode" = "Episode : %@";
+"labelGender" = "Gender : %@";
+"labelName" = "Name : %@";
+"labelSpecies" = "Species : %@";
+"labelStatus" = "Status : %@";
 "labelType" = "Type : %@";
+"linkCharacter" = "Character %d";
+"linkEpisode" = "Episode %d";

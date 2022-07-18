@@ -11,7 +11,7 @@ protocol AppComponentProtocol {
     var viewModel: MainViewModel { get }
 }
 
-final class AppComponent: AppComponentProtocol {
+final class AppComponent: ObservableObject, AppComponentProtocol {
     static let shared: AppComponentProtocol = AppComponent()
     
     private lazy var mainViewModel: MainViewModel = {

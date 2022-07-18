@@ -12,7 +12,9 @@ import RickMortySwiftApi
 struct EpisodeListView: View {
     @EnvironmentObject var viewModel: MainViewModel
     
+    @State private var isLinkActive: Bool = false
     @State private var isRefreshing = false
+    @State private var selecteId: Int = -1
     @State private var subscriptions = Set<AnyCancellable>()
     
     var body: some View {
@@ -31,14 +33,26 @@ struct EpisodeListView: View {
                 ForEach(viewModel.episodes) { episode in
                     CardView(episode: episode)
                         .padding([.leading, .trailing], Constants.margin)
+                        .onTapGesture {
+                            selecteId = episode.id
+                            isLinkActive = true
+                        }
                 }
             }
         }
+        .background(navigationLink())
         .onAppear {
             if viewModel.episodes.count == 0 {
                 viewModel.syncEpisodes()
             }
         }
+    }
+    
+    private func navigationLink() -> some View {
+        NavigationLink(destination: EpisodeDetailsView(episodeId: selecteId), isActive: $isLinkActive) {
+            EmptyView()
+        }
+        .hidden()
     }
     
     private struct Constants {

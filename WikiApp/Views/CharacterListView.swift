@@ -12,7 +12,9 @@ import RickMortySwiftApi
 struct CharacterListView: View {
     @EnvironmentObject var viewModel: MainViewModel
     
+    @State private var isLinkActive: Bool = false
     @State private var isRefreshing = false
+    @State private var selecteId: Int = -1
     @State private var subscriptions = Set<AnyCancellable>()
     
     var body: some View {
@@ -31,12 +33,24 @@ struct CharacterListView: View {
                 ForEach(viewModel.characters) { character in
                     CardView(character: character)
                         .padding([.leading, .trailing], Constants.margin)
+                        .onTapGesture {
+                            selecteId = character.id
+                            isLinkActive = true
+                        }
                 }
             }
         }
+        .background(navigationLink())
         .onAppear {
             print("CharacterListView")
         }
+    }
+    
+    private func navigationLink() -> some View {
+        NavigationLink(destination: CharacterDetailsView(characterId: selecteId), isActive: $isLinkActive) {
+            EmptyView()
+        }
+        .hidden()
     }
     
     private struct Constants {
@@ -59,7 +73,7 @@ fileprivate struct CardView: View {
                         switch phase {
                         case .success(let image):
                             image.resizable()
-                                .scaledToFill()
+                                .scaledToFit()
                                 .onAppear {
                                     print(image)
                                 }
@@ -68,7 +82,7 @@ fileprivate struct CardView: View {
                         case .failure(_):
                             Image(systemName: "photo")
                                 .resizable()
-                                .scaledToFill()
+                                .scaledToFit()
                         @unknown default:
                             EmptyView()
                         }

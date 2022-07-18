@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ProgressView: UIViewRepresentable {
+    var color: Color = .accentColor
+    var style: UIActivityIndicatorView.Style = .medium
+    
     func makeUIView(context: Self.Context) -> UIActivityIndicatorView {
-        return UIActivityIndicatorView()
+        let view = UIActivityIndicatorView(style: style)
+        view.color = UIColor(self.color)
+        return view
     }
     
     func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {

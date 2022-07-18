@@ -28,7 +28,8 @@ struct HomeView: View {
                             CharacterListView()
                         }
                     }
-                    
+                }
+                .overlay(alignment: .center) {
                     if viewModel.isLoading {
                         ProgressView()
                     }
