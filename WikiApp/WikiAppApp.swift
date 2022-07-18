@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct WikiAppApp: App {
+    @State private var isLoaded = false
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            ZStack {
+                Color.background.edgesIgnoringSafeArea(.all)
+                
+                if !isLoaded {
+                    SplashView(isLoaded: $isLoaded)
+                } else {
+                    HomeView()
+                }
+            }
+            .environmentObject(AppComponent.shared.viewModel)
         }
     }
 }

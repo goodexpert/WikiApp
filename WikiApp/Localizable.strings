@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WikiApp
+
+  Created by Seongwuk Park on 17/07/22.
+  
+*/
+"appName" = "Ricky & Morty Wiki";
+"character" = "Character";
+"episode" = "Episode";
+"location" = "Location";
+"labelDimension" = "Dimension : %@";
+"labelType" = "Type : %@";
